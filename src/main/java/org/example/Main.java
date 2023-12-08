@@ -36,10 +36,13 @@ public class Main {
         myData.setMyFieldOne(new MyFieldOne("MyFieldOne", 1));
         myData.setMyFieldTwo(new MyFieldTwo("MyFieldTwo", 2));
         MyIOController<MyData> myIOController = new MyIOController<>();
+
+        System.out.println("Object created: \n" + myData);
         myIOController.saveDataFromFile(myData, fileName);
 
         // 2. принимает строку вида class.getName() + "_" + UUID.randomUUID().toString() и загружает объект из файла и удаляет этот файл.
         MyData loadedData = myIOController.loadDataFromFile(fileName);
+        System.out.println("Object loaded: ");
         System.out.println(loadedData);
     }
 }
